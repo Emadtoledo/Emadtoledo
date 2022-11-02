@@ -1,0 +1,119 @@
+
+* {
+    margin: 0%;
+    padding: 0%;
+}
+
+/* HEADER */
+
+a {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: black;
+    margin-left: 10px;
+}
+
+h1 {
+    text-align: left;
+    color: green;
+}
+
+h2 {
+    text-align: left;
+    color: black;
+}
+
+h3 {
+    text-align: center;
+    color: black;
+}
+
+header {
+    background-color: darkgray;
+}
+
+li {
+    list-style-type: none;
+    display: inline-block;
+}
+
+/* MAIN */
+
+main {
+    background-color: gray;
+}
+
+.parrafo {
+    text-align: center;
+    font-size: 20px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+/* IMAGENES */
+
+img {
+    width: 300px;
+}
+
+/* FOOTER */
+
+footer {
+    background-color: darkkhaki;
+    text-align: center;
+}
+
+/* MOBILE FIRST */
+
+header {
+    background-color: gainsboro;
+    grid-area: header;
+}
+
+nav {
+    background-color: grey;
+    grid-area: nav;
+}
+
+/* CONTENEDOR PADRE */
+
+
+.gridPadre {
+    display: grid;
+    /* CONFIGURO DE MANERA EXPLÍCITA */
+    grid-template-columns: repeat(10,1fr);
+    /* fr = unidad de medida que utilizamos en GRID */
+    grid-template-rows: 1fr 1fr 1fr;
+    /* GAP = me genera el espacio entre columnas y filas */
+    /* column-gap: 5px;
+    row-gap: 8px; */
+    gap:10px;
+}
+
+.gridContenedor {
+    text-align: left;
+}
+
+
+/* VERSIÓN TABLETA  */
+@media (min-width:768px) {
+    .gridContenedor {
+        display: grid;
+        grid-template-areas: 
+        "header header header"
+        "nav nav nav"
+        "nav nav nav"
+        "main main main"
+        "footer footer footer";
+    }
+}
+/* VERSIÓN DE ESCRITORIO  */
+@media (min-width:1024px) {
+    .gridContenedor {
+        grid-template-areas: 
+        "header header header"
+        "nav nav nav"
+        "nav nav nav"
+        "main main main"
+        "footer footer footer";
+    }
+}
